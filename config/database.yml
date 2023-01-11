@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: bulzai_production
-  username: bulzai
-  password: <%= ENV["BULZAI_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
