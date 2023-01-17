@@ -1,29 +1,61 @@
-// client/src/components/App.js
-import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Signup from "./Signup";
+import Login from "./Login";
+import Contact from "./Contact";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import GameOne from "./GameOne";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
+   // keeping user logged in
   useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
+    fetch("/me")
+    .then((response) => {
+      if (response.ok) { response.json()
+    .then((user) => setUser(user));
+      }
+    });
   }, []);
 
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((response) => {
+      if (response.ok) {
+        setUser(null);
+        navigate("/");
+      }
+    });
+  }
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
-          </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <>
+       <NavBar
+        user={user}
+        setUser={setUser}
+        handleLogoutClick={handleLogoutClick}
+      />
+      <main>
+        {user ? (
+  
+          <Routes>
+            <Route exact path="/" element={ <Home user={user} navigate={navigate} /> }></Route>
+            <Route exact path="/contactus" element={<Contact />}></Route>
+            <Route exact path="/gameone" element={<GameOne />}></Route>
+          </Routes>
+        ) : (
+          // if logged out
+          <Routes>
+            <Route exact path="/" element={ <Home user={user} navigate={navigate} />}></Route>
+            <Route exact path="/login" element={<Login setUser={setUser} />}></Route>
+            <Route exact path="/signup" element={<Signup setUser={setUser} />} ></Route>
+            <Route exact path="/contactus" element={<Contact />}></Route>
+          </Routes>
+        )}
+      </main>
+    </>
   );
 }
 
