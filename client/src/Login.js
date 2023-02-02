@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField, Box, Labe } from "@mui/material";
 import { Button,Input} from 'semantic-ui-react'
 import { useNavigate } from "react-router-dom";
 
@@ -20,8 +21,8 @@ function Login({ setUser }) {
       if (response.ok) {
         response.json().then((user) => {
           setUser(user);
+          navigate("/");
         });
-        navigate("/");
       }
     });
   }
@@ -29,6 +30,7 @@ function Login({ setUser }) {
   const goToSignupPage = () => navigate("/signup");
 
   return (
+
     <div className="loginpage">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>

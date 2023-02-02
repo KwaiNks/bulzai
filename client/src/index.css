@@ -11,3 +11,173 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.divSquare{
+        width:38%; height:200px; margin:4px; border:1px solid black; float: left
+    } 
+
+.loginpage{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.logininputs{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#username {
+  width: 100%;
+}
+
+#password {
+  width: 100%;
+}
+
+.signup-form {
+  width: 50vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactMessage {
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.link {
+  cursor: pointer;
+  color: rgba(7,100,154,255);
+  padding-top: 30px;
+  float: right;
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 1.5%;
+ 
+}
+
+input:focus {
+background-color: lightblue;
+border-color: coral;
+}
+
+input {
+width: 15%;
+border: 2px solid rgb(175, 175, 175);
+border-radius: 4px;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+}
+
+button{
+background-color: #d0d0d0;
+border: none;
+color: rgb(47, 47, 47);
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+
+#welcome{
+margin-left: 1%;
+}
+
+#logoutButton{
+background-color: white;
+cursor: pointer;
+  color: teal;
+  padding-top: 30px;
+  float: right;
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 1.5%;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#email {
+width: 100%;
+}
+
+.lowlink{
+color: rgba(7,100,154,255);
+}
+
+#container{
+  float: center;
+  width: 300px;
+  padding-top: 10%;
+  padding-left: 25%;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  margin: -50px 0 0 -50px;
+
+}
+
+.App{
+  /* margin: auto;
+  width: 50%;
+  border: 3px solid blue;
+  padding: 10px; */
+
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%; */
+  background-image: url("./gameImages/graph.png");
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  margin: -50px 0 0 -50px;
+
+  /* width:350;
+  height:350; 
+  text-align :"center";  */
+  /* background-color :"green"; */
+}
+
+#gamethree{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  float: center;
+  width: 300px;
+  padding-top: 5%;
+
+}
+
+#gametwo{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  float: center;
+  width: 300px;
+  padding-top: 5%;
+  padding-left: 1%;
+}
+
+#gameDetails{
+margin-top: 570px;
+}
+
+#gamethreeDetails{
+  margin-top: 450px;
+}

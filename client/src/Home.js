@@ -1,5 +1,5 @@
 
-import { Card, Container } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import Game1 from "./gameImages/game1.jpg"
 import Game2 from "./gameImages/game2.jpg"
 import Game3 from "./gameImages/game3.jpg"
@@ -10,15 +10,15 @@ function Home({ user, navigate}) {
     return (
       <>
         <h3 id="welcome">Welcome, {user.username}!</h3>
-        <Container>
-        <Card.Group>
-        <Card color='red' image={""} />
-        <Card color='orange' image={Game1} />
-        <Card color='yellow' image={Game2} />
-        <Card color='yellow' image={Game3} />
-        </Card.Group>
-        </Container>
+       
+        <div id="container">
         
+        <Card color='orange' image={Game1} onClick={() => navigate("/gameone")} />
+        <Card color='yellow' image={Game2} onClick={() => navigate("/gametwo")}/>
+        <Card color='yellow' image={Game3} onClick={() => navigate("/gamethree")}/>
+
+        </div>
+
       </>   
     )
   }

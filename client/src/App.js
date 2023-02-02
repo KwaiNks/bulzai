@@ -6,6 +6,8 @@ import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import GameOne from "./GameOne";
+import GameTwo from "./GameTwo";
+import GameThree from "./GameThree";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,6 +46,8 @@ function App() {
             <Route exact path="/" element={ <Home user={user} navigate={navigate} /> }></Route>
             <Route exact path="/contactus" element={<Contact />}></Route>
             <Route exact path="/gameone" element={<GameOne />}></Route>
+            <Route exact path="/gametwo" element={<GameTwo />}></Route>
+            <Route exact path="/gamethree" element={<GameThree />}></Route>
           </Routes>
         ) : (
           // if logged out

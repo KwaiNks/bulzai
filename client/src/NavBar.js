@@ -12,7 +12,6 @@ function NavBar({ user, handleLogoutClick }) {
         <>
           <Link className="link" to="/contactus"> {" "} Contact Us{" "} </Link>
           <Link className="link" to="/" onClick={handleLogoutClick}> Logout </Link>
-          <Link className="Link" to="/gameone">{" "} GameOne{" "}</Link>
         </>
       ) : (
         <>
